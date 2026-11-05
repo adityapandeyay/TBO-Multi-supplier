@@ -1,0 +1,262 @@
+{
+  "project_name": "TBO Multi-Supplier Optimization (Browse & Compare)",
+  "archetype": "Organic Warm Editorial & High-Precision Comparison (Archetype 1 + Swiss Clarity)",
+  "theme": "light",
+  "watermark": {
+    "text": "INNOVEX",
+    "position": "fixed bottom-4 right-6 z-50 text-xs tracking-widest font-mono uppercase bg-stone-900/90 text-stone-300 px-3 py-1.5 rounded-full border border-stone-700/60 shadow-lg backdrop-blur-md pointer-events-none select-none"
+  },
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#FAF7F2",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E",
+        "roles": {
+          "link": "#0F766E",
+          "error": "#BE123C",
+          "success": "#047857",
+          "brand_accent": "#C2410C"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#78716C",
+        "roles": {
+          "border": "#E7E5E4",
+          "highlight": "#FFF7ED",
+          "badge_bg": "#F5F5F4"
+        }
+      },
+      {
+        "name": "panel_elevated",
+        "kind": "solid",
+        "bg": "#F5F0E8",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E"
+      },
+      {
+        "name": "inverse",
+        "kind": "solid",
+        "bg": "#1C1917",
+        "on_bg": "#FAF7F2",
+        "on_bg_muted": "#A8A29E",
+        "roles": {
+          "accent": "#FDBA74",
+          "border": "#292524"
+        }
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#1C1917",
+        "guarantee": "scrim: linear-gradient(180deg, rgba(28,25,23,0.75) 0%, rgba(28,25,23,0.50) 100%)",
+        "on_bg": "#FAF7F2",
+        "on_bg_muted": "#E7E5E4",
+        "roles": {
+          "link": "#FDBA74",
+          "error": "#FDA4AF",
+          "success": "#6EE7B7"
+        }
+      },
+      {
+        "name": "badge_best_price",
+        "kind": "solid",
+        "bg": "#ECFDF5",
+        "on_bg": "#065F46",
+        "on_bg_muted": "#047857"
+      },
+      {
+        "name": "badge_best_terms",
+        "kind": "solid",
+        "bg": "#EFF6FF",
+        "on_bg": "#1E40AF",
+        "on_bg_muted": "#2563EB"
+      },
+      {
+        "name": "badge_reliability",
+        "kind": "solid",
+        "bg": "#FEF3C7",
+        "on_bg": "#92400E",
+        "on_bg_muted": "#B45309"
+      }
+    ],
+    "accent": "#C2410C",
+    "on_accent": "#FFFFFF",
+    "accent_hover": "#9A3412"
+  },
+  "typography": {
+    "font_family_heading": "Playfair Display Variable, Georgia, serif",
+    "font_family_body": "DM Sans Variable, system-ui, sans-serif",
+    "font_family_mono": "IBM Plex Mono, monospace",
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 24,
+      "h4": 20,
+      "body": 16,
+      "caption": 14
+    },
+    "body_tracking": "tracking-normal",
+    "heading_tracking": "tracking-tight"
+  },
+  "entry_surfaces": {
+    "/": "warm editorial split hero with search engine hub left/center, featured curated luxury hotel & sightseeing live comparison showcases right",
+    "/search": "clean high-density split view: sticky search & multidimensional filter rail left, ranked deduplicated inventory feed with accordion supplier offers right",
+    "/hotel/:id": "enriched luxury property detail layout: multi-photo asymmetric gallery top, deep property specs, unified consolidated rooms with side-by-side supplier comparison matrix",
+    "/sightseeing/:id": "experience storytelling detail layout: hero banner + itinerary breakdown, access type & inclusion matrix, expandable supplier packages comparison table"
+  },
+  "core_functional_architecture": {
+    "verticals": [
+      {
+        "id": "hotels",
+        "label": "Hotels & Resorts",
+        "search_fields": ["Destination", "Check-in Date", "Check-out Date", "Guests / Rooms"],
+        "comparison_criteria": [
+          "Equivalent Room Types (dedup match)",
+          "Price & Currency (INR ₹ / USD $)",
+          "Room Availability status",
+          "Cancellation Policies (e.g. Free cancellation until 48h vs Non-refundable)",
+          "Payment Terms (Pay at property vs Pay now)",
+          "Supplier Reliability Score (98.4%, 96.1%, 91.0%)"
+        ]
+      },
+      {
+        "id": "sightseeing",
+        "label": "Sightseeing & Experiences",
+        "search_fields": ["Destination", "Activity Date", "Participants"],
+        "comparison_criteria": [
+          "Duration (e.g. 4 Hours vs Full Day 8 Hours)",
+          "Inclusions (Audio guide, Entry tickets, Bottled water, Snacks)",
+          "Transfers (Hotel pickup/drop included vs Meeting point)",
+          "Meals (Lunch included vs None)",
+          "Activity Options (Skip-the-line VIP vs Standard Access)",
+          "Access Types (Private tour vs Small group vs General admission)",
+          "Cancellation Policies (Flexible 24h vs Strict)"
+        ]
+      }
+    ],
+    "deduplication_engine_representation": {
+      "explanation": "Multiple supplier feeds (e.g., Hotelbeds, Agoda Partner API, Viator, GetYourGuide, TBO Direct, WebBeds) for the exact same attraction or property are matched and unified into a single canonical product card. Users expand to see every supplier's live offer side by side.",
+      "ranking_badges": [
+        {"type": "best_price", "label": "Cheapest Supplier Offer", "color": "emerald"},
+        {"type": "best_terms", "label": "Most Flexible Terms", "color": "blue"},
+        {"type": "highest_reliability", "label": "Top Supplier SLA (99%)", "color": "amber"},
+        {"type": "best_inclusions", "label": "Max Inclusions Value", "color": "teal"}
+      ]
+    }
+  },
+  "image_urls": [
+    {
+      "category": "hero_hotels",
+      "url": "https://images.unsplash.com/photo-1561501900-3701fa6a0864?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBob3RlbCUyMHJlc29ydCUyMHBvb2x8ZW58MHx8fHwxNzkzODcxNDI0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Luxury infinity pool overlooking coastal bay at sunset",
+      "use_location": "Homepage Hero background & Luxury Hotel Detail Page primary showcase"
+    },
+    {
+      "category": "hotel_properties",
+      "url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBob3RlbCUyMHJlc29ydCUyMHBvb2x8ZW58MHx8fHwxNzkzODcxNDI0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Lounge deck overlooking serene ocean pool",
+      "use_location": "Hotel listing cards & Hotel detail gallery secondary image"
+    },
+    {
+      "category": "hotel_properties_2",
+      "url": "https://images.unsplash.com/photo-1549294413-26f195200c16?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMHJlc29ydCUyMHBvb2x8ZW58MHx8fHwxNzkzODcxNDI0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Tropical resort with palm-fringed lagoon pool",
+      "use_location": "Hotel search results card & detail gallery tertiary image"
+    },
+    {
+      "category": "hotel_dining",
+      "url": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBob3RlbCUyMHJlc29ydCUyMHBvb2x8ZW58MHx8fHwxNzkzODcxNDI0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Overwater dining deck with wooden cabana chairs",
+      "use_location": "Hotel property dining & board basis comparison section"
+    },
+    {
+      "category": "sightseeing_taj",
+      "url": "https://images.unsplash.com/photo-1523131328515-865dbf27fe0f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxzaWdodHNlZWluZyUyMGxhbmRtYXJrJTIwdG91cnxlbnwwfHx8fDE3OTM4NzE0MjR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Majestic Taj Mahal reflecting pool and monument",
+      "use_location": "Sightseeing search result card and Taj Mahal VIP Sunrise Tour Detail page"
+    },
+    {
+      "category": "sightseeing_london",
+      "url": "https://images.unsplash.com/photo-1486299267070-83823f5448dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHxzaWdodHNlZWluZyUyMGxhbmRtYXJrJTIwdG91cnxlbnwwfHx8fDE3OTM4NzE0MjR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Big Ben & Westminster Palace in London",
+      "use_location": "Sightseeing search results list & London Royal Pass comparison"
+    },
+    {
+      "category": "sightseeing_paris",
+      "url": "https://images.unsplash.com/photo-1500153556700-4c8db53996c3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHw0fHxzaWdodHNlZWluZyUyMGxhbmRtYXJrJTIwdG91cnxlbnwwfHx8fDE3OTM4NzE0MjR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Eiffel Tower in daylight with champ de mars",
+      "use_location": "Sightseeing search results card & Paris Skip-The-Line Experience"
+    },
+    {
+      "category": "sightseeing_guide",
+      "url": "https://images.unsplash.com/photo-1600714480856-dc99b28892eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxzaWdodHNlZWluZyUyMGxhbmRtYXJrJTIwdG91cnxlbnwwfHx8fDE3OTM4NzE0MjR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Walking tour group discovering historic architecture with local guide",
+      "use_location": "Sightseeing curated highlights card and small-group comparison"
+    }
+  ],
+  "component_hierarchy": [
+    {
+      "name": "NavigationHeader",
+      "path": "frontend/src/components/layout/NavigationHeader.tsx",
+      "description": "Sticky top bar with TBO Optimization brand mark, Sightseeing/Hotels switcher, currency toggle (INR ₹ / USD $), demo data selector, and transparent backdrop blur."
+    },
+    {
+      "name": "SearchHeroBox",
+      "path": "frontend/src/components/search/SearchHeroBox.tsx",
+      "description": "Tabbed dual-vertical search form with auto-suggest destinations (Agra, London, Paris, Dubai, Bali), dates picker, guest selector, and instant ranking triggers."
+    },
+    {
+      "name": "ConsolidatedListingCard",
+      "path": "frontend/src/components/inventory/ConsolidatedListingCard.tsx",
+      "description": "The central innovation component: Displays canonical product with deduplicated summary, explainable ranking pill ('#1 Ranked: Lowest combined price & 100% free cancellation'), thumbnail gallery, key differentiators chips, and expandable nested supplier matrix with instant side-by-side comparison modal trigger."
+    },
+    {
+      "name": "SupplierComparisonDrawerOrModal",
+      "path": "frontend/src/components/comparison/SupplierComparisonMatrix.tsx",
+      "description": "Full side-by-side comparison grid matching 3-5 suppliers on all required parameters: room/ticket equivalence, base price + taxes, cancellation deadline, meal/transfer inclusions, refundability, and supplier reliability score. Flags 'Cheapest' and 'Best Terms' distinctively."
+    },
+    {
+      "name": "ExplainableRankingExplainer",
+      "path": "frontend/src/components/inventory/ExplainableRankingExplainer.tsx",
+      "description": "Plain-language badge and popover explaining why a specific option is ranked first (e.g. 'Saved ₹2,450 vs Supplier B; 99.2% fulfillment SLA')."
+    },
+    {
+      "name": "EnrichedProductDetail",
+      "path": "frontend/src/components/detail/EnrichedProductDetail.tsx",
+      "description": "Editorial layout for detail view: rich amenities, image carousel, supplier matrix folded into clean tabs, map location, and transparent supplier disclaimers (browse and compare only)."
+    },
+    {
+      "name": "InnovexWatermark",
+      "path": "frontend/src/components/layout/InnovexWatermark.tsx",
+      "description": "Fixed bottom watermark reading 'INNOVEX' as mandated by problem statement."
+    }
+  ],
+  "motion": {
+    "accordion_transition": "transition-all duration-300 ease-in-out",
+    "card_hover": "hover:-translate-y-1 hover:shadow-xl transition-all duration-200",
+    "badge_pulse": "animate-pulse-subtle",
+    "tabs_indicator": "layoutId animated spring transition"
+  },
+  "accessibility": {
+    "contrast_check": "All text tokens meet APCA / WCAG AA 4.5:1. Primary text #1C1917 on #FAF7F2 is 13.8:1 contrast.",
+    "keyboard_nav": "Full tab indices, ARIA expand states for accordion supplier rows, modal focus traps.",
+    "data_testid_convention": "Every interactive control and metric cell has descriptive kebab-case data-testid (e.g. data-testid='supplier-compare-btn-viator', data-testid='tab-sightseeing', data-testid='ranking-reason-badge')."
+  },
+  "instructions_to_main_agent": [
+    "1. Follow the CSS entry /app/frontend/src/index.css with Playfair Display for headings and DM Sans for body.",
+    "2. Render the browse-and-compare experience without any checkout, user sign-in or payment barriers.",
+    "3. Seed rich realistic multi-supplier demo datasets for both verticals: (Hotels: Taj Lake Palace Udaipur, The Savoy London, Hotel Le Meurice Paris; Sightseeing: Taj Mahal Sunrise VIP Tour, London Eye & Thames River Cruise, Eiffel Tower Skip-the-line with Summit).",
+    "4. Highlight the deduplication technology: multiple suppliers (TBO Direct, Hotelbeds, Agoda Partner, Viator, GetYourGuide, TourCMS) consolidated into 1 parent listing card.",
+    "5. Clearly display the comparison panel with Best Price and Best Terms badges and explainable ranking justifications.",
+    "6. Include the INNOVEX watermark fixed at the bottom of every page.",
+    "7. Guarantee resilient fallback: if API or Mongo data is loading/unavailable, render the rich seeded client demo state seamlessly so the UI never displays blank errors."
+  ]
+}
